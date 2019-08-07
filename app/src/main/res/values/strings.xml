@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RapidValueTest</string>
+    <string name="app_name">Test</string>
     <string name="prompt_username">UserName</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in_short">SignIn</string>
