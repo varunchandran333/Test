@@ -1,6 +1,5 @@
 package com.example.logintest.ui.Order.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -11,12 +10,10 @@ import com.example.logintest.events.EventListeners
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 
-class OrderAdapter internal constructor(orders: List<Orders>, context: Context, listener: EventListeners.AdapterEvents) :
+class OrderAdapter internal constructor(orders: List<Orders>, listener: EventListeners.AdapterEvents) :
         androidx.recyclerview.widget.RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     private var listner: EventListeners.AdapterEvents = listener
-    private var mRecentlyDeletedItemPosition: Int = 0
-    private lateinit var mRecentlyDeletedItem: Orders
     private var order: List<Orders> = orders
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -44,9 +41,7 @@ class OrderAdapter internal constructor(orders: List<Orders>, context: Context, 
     }
 
     fun deleteItem(position: Int) {
-        mRecentlyDeletedItem = order[position]
-        mRecentlyDeletedItemPosition = position
-        listner.onDelete(mRecentlyDeletedItem, mRecentlyDeletedItemPosition)
+        listner.onDelete(order[position])
         notifyItemRemoved(position)
     }
 }
