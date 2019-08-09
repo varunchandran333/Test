@@ -15,7 +15,7 @@ interface EventListeners{
         fun onSubmit()
     }
     interface AdapterEvents{
-        fun onDelete(order: Orders)
-        fun onLongClick(order:Orders)
+        fun onDelete(orderNo: Long, id: String)
+        fun onLongClick(order: Orders, id: String)
     }
 }

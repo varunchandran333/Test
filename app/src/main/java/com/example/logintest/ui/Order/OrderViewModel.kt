@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class OrderViewModel(application: Application) :AndroidViewModel(application){
     private val repository: OrderRepository
     val allOrders: LiveData<List<Orders>>
+
     init {
         val wordsDao = OrderDatabase.getDatabase(viewModelScope).orderDao()
         repository = OrderRepository(wordsDao)

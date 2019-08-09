@@ -2,24 +2,19 @@ package com.example.logintest
 
 import android.app.Application
 import android.content.Context
-import android.content.SharedPreferences
+import com.google.firebase.FirebaseApp
 
 class BaseApplication : Application() {
-
+    override fun onCreate() {
+        super.onCreate()
+        FirebaseApp.initializeApp(getContext())
+    }
     init {
-        instance = this
+        mInstance = this
     }
 
     companion object {
-        private var instance: BaseApplication? = null
-
-        fun getContext(): Context {
-            return instance!!.applicationContext
-        }
-
-//        fun getSharedPreferences(): SharedPreferences {
-//            return getContext().getSharedPreferences(BusConstants.SHARED_PREFFRENCE_UNIQUE_ID, Context.MODE_PRIVATE)
-//        }
-
+        lateinit var mInstance: BaseApplication
+        fun getContext(): Context = mInstance.applicationContext
     }
 }

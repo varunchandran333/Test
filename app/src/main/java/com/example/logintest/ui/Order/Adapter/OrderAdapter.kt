@@ -7,41 +7,47 @@ import com.example.logintest.R
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.databinding.RecyclerviewItemBinding
 import com.example.logintest.events.EventListeners
+import com.example.logintest.ui.Order.Adapterimport.FirestoreAdapter
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 
-class OrderAdapter internal constructor(orders: List<Orders>, listener: EventListeners.AdapterEvents) :
-        androidx.recyclerview.widget.RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
+class OrderAdapter internal constructor(orders: List<Orders>, listener: EventListeners.AdapterEvents, query: Query) :
+        FirestoreAdapter<OrderAdapter.OrderViewHolder>(query) {
 
     private var listner: EventListeners.AdapterEvents = listener
-    private var order: List<Orders> = orders
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         val itemView: RecyclerviewItemBinding = DataBindingUtil.inflate(LayoutInflater
                 .from(parent.context), R.layout.recyclerview_item, parent, false)
         return OrderViewHolder(itemView)
     }
 
-    override fun getItemCount() = order.size
-
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
-        holder.bind(order[position])
+        holder.bind(getSnapshot(position))
     }
 
     inner class OrderViewHolder(itemView: RecyclerviewItemBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView.root) {
-        fun bind(item: Orders) {
+        fun bind(orders: DocumentSnapshot) {
+            val item = orders.toObject(Orders::class.java)
             itemView.setOnLongClickListener {
-                listner.onLongClick(order[layoutPosition])
+                val id = getSnapshot(layoutPosition).id
+                val order = getSnapshot(layoutPosition).toObject(Orders::class.java)
+                if (order != null)
+                    listner.onLongClick(order, id)
                 return@setOnLongClickListener true
             }
-            itemView.textViewCustomerName.text = item.customerName
-            itemView.textViewCustomerAddress.text = item.customerAddress
-            itemView.textViewTotalOrders.text = item.noOfOrders
+            itemView.textViewCustomerName.text = item?.customerName
+            itemView.textViewCustomerAddress.text = item?.customerAddress
+            itemView.textViewTotalOrders.text = item?.noOfOrders
         }
     }
 
     fun deleteItem(position: Int) {
-        listner.onDelete(order[position])
+        val orderNo = getSnapshot(position).getLong("orderNo")
+        val id = getSnapshot(position).id
+        if (orderNo != null)
+            listner.onDelete(orderNo = orderNo, id = id)
         notifyItemRemoved(position)
     }
 }
