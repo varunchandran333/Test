@@ -1,58 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/item_margin"
-        android:background="@color/cardview_light_background"
-        android:orientation="vertical">
+                                                       xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                       xmlns:tools="http://schemas.android.com/tools"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_marginBottom="2dp"
+                                                       android:background="@color/cardview_light_background"
+                                                       android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textViewCustomerName"
-            style="@style/order"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/item_margin"
-            app:layout_constraintEnd_toStartOf="@id/textViewTotalOrders"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Sachin" />
+                android:id="@+id/textViewCustomerName"
+                style="@style/order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                app:layout_constraintEnd_toStartOf="@id/textViewTotalOrders"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Sachin"/>
 
         <TextView
-            android:id="@+id/textViewCustomerAddress"
-            style="@style/order"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/item_margin"
-            app:layout_constraintEnd_toStartOf="@id/textViewTotalOrders"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCustomerName"
-            tools:text="Mumbai" />
+                android:id="@+id/textViewCustomerAddress"
+                style="@style/order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                app:layout_constraintEnd_toStartOf="@id/textViewTotalOrders"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCustomerName"
+                tools:text="Mumbai"/>
 
         <TextView
-            android:id="@+id/textViewTotalOrdersLabel"
-            style="@style/order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/item_margin"
-            android:gravity="center"
-            android:text="Orders"
-            app:layout_constraintBottom_toTopOf="@id/textViewTotalOrders"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Orders" />
+                android:id="@+id/textViewTotalOrdersLabel"
+                style="@style/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
+                android:text="Orders"
+                app:layout_constraintBottom_toTopOf="@id/textViewTotalOrders"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Orders"/>
 
         <TextView
-            android:id="@+id/textViewTotalOrders"
-            style="@style/order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/item_margin"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="5000" />
+                android:id="@+id/textViewTotalOrders"
+                style="@style/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/textViewTotalOrdersLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="5000"/>
+        <TextView
+                android:id="@+id/textViewLocationLabel"
+                style="@style/order"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCustomerAddress"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="5000"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

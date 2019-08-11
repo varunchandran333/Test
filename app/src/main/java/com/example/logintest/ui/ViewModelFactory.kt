@@ -3,10 +3,10 @@ package com.example.logintest.ui
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.logintest.BaseApplication
 import com.example.logintest.data.repository.LoginDataSource
 import com.example.logintest.ui.Login.LoginViewModel
 import com.example.logintest.ui.Order.OrderViewModel
+import com.example.logintest.ui.Order.addNew.AddNewViewModel
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.
@@ -24,6 +24,11 @@ class ViewModelFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(OrderViewModel::class.java)) {
             return OrderViewModel(
                     application = Application()
+            ) as T
+        }
+        if (modelClass.isAssignableFrom(AddNewViewModel::class.java)) {
+            return AddNewViewModel(
+                application = Application()
             ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

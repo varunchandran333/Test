@@ -1,6 +1,7 @@
 package com.example.logintest.ui.Order.Adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.logintest.R
@@ -14,12 +15,14 @@ import kotlinx.android.synthetic.main.recyclerview_item.view.*
 
 
 class OrderAdapter internal constructor(orders: List<Orders>, listener: EventListeners.AdapterEvents, query: Query) :
-        FirestoreAdapter<OrderAdapter.OrderViewHolder>(query) {
+    FirestoreAdapter<OrderAdapter.OrderViewHolder>(query) {
 
     private var listner: EventListeners.AdapterEvents = listener
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        val itemView: RecyclerviewItemBinding = DataBindingUtil.inflate(LayoutInflater
-                .from(parent.context), R.layout.recyclerview_item, parent, false)
+        val itemView: RecyclerviewItemBinding = DataBindingUtil.inflate(
+            LayoutInflater
+                .from(parent.context), R.layout.recyclerview_item, parent, false
+        )
         return OrderViewHolder(itemView)
     }
 
@@ -27,7 +30,8 @@ class OrderAdapter internal constructor(orders: List<Orders>, listener: EventLis
         holder.bind(getSnapshot(position))
     }
 
-    inner class OrderViewHolder(itemView: RecyclerviewItemBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView.root) {
+    inner class OrderViewHolder(itemView: RecyclerviewItemBinding) :
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView.root) {
         fun bind(orders: DocumentSnapshot) {
             val item = orders.toObject(Orders::class.java)
             itemView.setOnLongClickListener {
@@ -40,6 +44,13 @@ class OrderAdapter internal constructor(orders: List<Orders>, listener: EventLis
             itemView.textViewCustomerName.text = item?.customerName
             itemView.textViewCustomerAddress.text = item?.customerAddress
             itemView.textViewTotalOrders.text = item?.noOfOrders
+            if (item?.location.isNullOrEmpty())
+                itemView.textViewLocationLabel.visibility = View.GONE
+            else {
+                itemView.textViewLocationLabel.visibility = View.VISIBLE
+                itemView.textViewLocationLabel.text = item?.location
+            }
+
         }
     }
 

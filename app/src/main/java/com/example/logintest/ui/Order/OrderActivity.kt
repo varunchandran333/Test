@@ -14,6 +14,7 @@ import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.events.EventListeners
 import com.example.logintest.ui.Order.Adapter.OrderAdapter
+import com.example.logintest.ui.Order.addNew.AddNewActivity
 import com.example.logintest.ui.ViewModelFactory
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -73,13 +74,14 @@ class OrderActivity : AppCompatActivity(), EventListeners.AdapterEvents {
                 .limit(10)
         if (mQuery != null)
             setRecyclerView(mQuery!!)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        else
         viewModel.allOrders.observe(this, Observer {
             if (!it.isNullOrEmpty()) {
                 //setRecyclerView(it)
             }
         })
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setRecyclerView(mQuery: Query) {

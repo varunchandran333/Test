@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -12,96 +12,145 @@
             name="order"
             type="com.example.logintest.data.model.order.Orders" />
     </data>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_white">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:background="@color/color_white">
 
-        <EditText
-            android:id="@+id/editTextName"
-            style="@style/input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_name"
-            android:maxLines="1"
-            android:text="@{order.customerName}"
-            app:layout_constraintBottom_toTopOf="@+id/editTextAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                    android:id="@+id/editTextName"
+                    style="@style/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_name"
+                    android:maxLines="1"
+                    android:text="@{order.customerName}"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@+id/editTextAddress"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toEndOf="parent" android:inputType="textPersonName"
+                    android:importantForAutofill="no"
+                    tools:targetApi="o"/>
 
-        <EditText
-            android:id="@+id/editTextAddress"
-            style="@style/input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_address"
-            android:maxLines="2"
-            android:text="@{order.customerAddress}"
-            app:layout_constraintBottom_toTopOf="@+id/editTextContact"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+            <EditText
+                    android:id="@+id/editTextAddress"
+                    style="@style/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_address"
+                    android:maxLines="2"
+                    android:text="@{order.customerAddress}"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextName"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextContact"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+                    android:inputType="textPostalAddress" android:importantForAutofill="auto" tools:targetApi="o"
+                    android:autofillHints="Address"/>
 
-        <EditText
-            android:id="@+id/editTextContact"
-            style="@style/input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_mobile_number"
-            android:inputType="phone"
-            android:text="@{order.customerPhone}"
-            app:layout_constraintBottom_toTopOf="@+id/editTextCount"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextAddress" />
+            <EditText
+                    android:id="@+id/editTextContact"
+                    style="@style/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_mobile_number"
+                    android:inputType="phone"
+                    android:text="@{order.customerPhone}"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
+                    app:layout_constraintBottom_toTopOf="@+id/editTextCount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+                    android:importantForAutofill="auto" android:autofillHints=""/>
 
-        <EditText
-            android:id="@+id/editTextCount"
-            style="@style/input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_order_count"
-            android:inputType="number"
-            android:text="@{order.noOfOrders}"
-            app:layout_constraintBottom_toTopOf="@+id/textViewDate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextContact" />
+            <EditText
+                    android:id="@+id/editTextCount"
+                    style="@style/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_order_count"
+                    android:inputType="number"
+                    android:text="@{order.noOfOrders}"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextContact"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+                    android:importantForAutofill="auto" tools:targetApi="o"/>
 
-        <TextView
-            android:id="@+id/textViewDate"
-            style="@style/input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_purchase_date"
-            android:onClick="@{()->eventListener.onPurchaseDate()}"
-            android:orientation="horizontal"
-            android:text="@{order.orderDueDate}"
-            app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCount" />
+            <TextView
+                    android:id="@+id/textViewDate"
+                    style="@style/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_purchase_date"
+                    android:onClick="@{()->eventListener.onPurchaseDate()}"
+                    android:orientation="horizontal"
+                    android:text="@{order.orderDueDate}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
+                    app:layout_constraintBottom_toTopOf="@id/textViewLocation"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextCount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+            <TextView
+                    android:id="@+id/textViewLocationLabel"
+                    style="@style/input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:gravity="center"
+                    android:hint="@string/lable_location"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonLocation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewLocation"/>
+            <TextView
+                    android:id="@+id/textViewLocation"
+                    style="@style/input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:paddingTop="6dp"
+                    android:text="@{order.location}"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonLocation"
+                    app:layout_constraintStart_toEndOf="@+id/textViewLocationLabel"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
-        <Button
-            android:id="@+id/buttonSubmit"
-            style="@style/input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="@string/button_submit"
-            android:onClick="@{()->eventListener.onSubmit()}"
-            android:textColor="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                    android:id="@+id/buttonLocation"
+                    style="@style/input"
+                    android:layout_width="148dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_button"
+                    android:text="@string/button_location"
+                    android:padding="8dp"
+                    android:textAllCaps="false"
+                    android:onClick="@{()->eventListener.getLocation()}"
+                    android:textColor="@color/color_white"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLocation"
+                    app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            <Button
+                    android:id="@+id/buttonSubmit"
+                    style="@style/input"
+                    android:layout_width="148dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:background="@color/color_button"
+                    android:text="@string/button_submit"
+                    android:onClick="@{()->eventListener.onSubmit()}"
+                    android:textColor="@color/color_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonLocation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

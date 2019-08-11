@@ -13,6 +13,7 @@ interface EventListeners{
     interface OrderEvents {
         fun onPurchaseDate()
         fun onSubmit()
+        fun getLocation()
     }
     interface AdapterEvents{
         fun onDelete(orderNo: Long, id: String)
