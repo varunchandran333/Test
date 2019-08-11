@@ -7,8 +7,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
 import com.example.logintest.R
-import com.example.logintest.ui.Login.LoginActivity
-import com.example.logintest.ui.Login.LoginViewModel
+import com.example.logintest.ui.login.LoginActivity
+import com.example.logintest.ui.login.LoginViewModel
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Rule

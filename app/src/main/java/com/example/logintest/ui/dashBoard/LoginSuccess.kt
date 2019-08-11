@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Order
+package com.example.logintest.ui.dashBoard
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,8 @@ import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.data.model.LoggedInUser
 import com.example.logintest.databinding.ActivitySuccessBinding
 import com.example.logintest.events.EventListeners
-import com.example.logintest.ui.Login.LoginActivity
+import com.example.logintest.ui.login.LoginActivity
+import com.example.logintest.ui.order.OrderActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_success.*
 

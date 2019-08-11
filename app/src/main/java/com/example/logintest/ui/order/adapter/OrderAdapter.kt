@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Order.Adapter
+package com.example.logintest.ui.order.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import com.example.logintest.R
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.databinding.RecyclerviewItemBinding
 import com.example.logintest.events.EventListeners
-import com.example.logintest.ui.Order.Adapterimport.FirestoreAdapter
+import com.example.logintest.ui.order.Adapterimport.FirestoreAdapter
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.recyclerview_item.view.*

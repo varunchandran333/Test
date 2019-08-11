@@ -4,9 +4,9 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.logintest.data.repository.LoginDataSource
-import com.example.logintest.ui.Login.LoginViewModel
-import com.example.logintest.ui.Order.OrderViewModel
-import com.example.logintest.ui.Order.addNew.AddNewViewModel
+import com.example.logintest.ui.login.LoginViewModel
+import com.example.logintest.ui.order.OrderViewModel
+import com.example.logintest.ui.order.addNew.AddNewViewModel
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

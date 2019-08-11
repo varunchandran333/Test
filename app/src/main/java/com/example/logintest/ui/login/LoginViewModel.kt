@@ -1,13 +1,13 @@
-package com.example.logintest.ui.Login
+package com.example.logintest.ui.login
 
+import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.util.Patterns
 import com.example.logintest.R
-import com.example.logintest.data.repository.LoginDataSource
 import com.example.logintest.data.model.LoginFormState
 import com.example.logintest.data.model.LoginResult
+import com.example.logintest.data.repository.LoginDataSource
 
 open class LoginViewModel(val dataSource: LoginDataSource) : ViewModel() {
     private val loginData = MutableLiveData<LoginFormState>()

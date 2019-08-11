@@ -1,19 +1,18 @@
 package com.example.logintest.database
 
-import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.logintest.BaseApplication
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.data.repository.OrderDAO
+import com.example.logintest.myApp.BaseApplication
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Database(entities = arrayOf(Orders::class), version = 1)
-public abstract class OrderDatabase : RoomDatabase() {
+abstract class OrderDatabase : RoomDatabase() {
     abstract fun orderDao(): OrderDAO
 
     companion object {

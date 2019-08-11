@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Login
+package com.example.logintest.ui.login
 
 import android.app.Activity
 import android.content.Context
@@ -22,8 +22,8 @@ import com.example.logintest.data.model.LoggedInUser
 import com.example.logintest.data.model.UserDetails
 import com.example.logintest.databinding.ActivityMainBinding
 import com.example.logintest.events.EventListeners
-import com.example.logintest.ui.Order.LoginSuccess
 import com.example.logintest.ui.ViewModelFactory
+import com.example.logintest.ui.dashBoard.LoginSuccess
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 

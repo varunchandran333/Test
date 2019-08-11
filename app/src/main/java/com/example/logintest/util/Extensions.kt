@@ -1,4 +1,4 @@
-package com.example.logintest
+package com.example.logintest.util
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

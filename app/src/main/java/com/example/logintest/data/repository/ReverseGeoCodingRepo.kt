@@ -4,7 +4,7 @@ import android.location.Address
 import android.location.Geocoder
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.logintest.BaseApplication
+import com.example.logintest.myApp.BaseApplication
 import java.io.IOException
 import java.util.*
 import kotlin.collections.ArrayList

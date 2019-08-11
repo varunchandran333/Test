@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Order
+package com.example.logintest.ui.order
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,14 +8,14 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logintest.R
-import com.example.logintest.SwipeToDeleteCallback
 import com.example.logintest.constants.AppConstants.Companion.ORDER_ID
 import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.events.EventListeners
-import com.example.logintest.ui.Order.Adapter.OrderAdapter
-import com.example.logintest.ui.Order.addNew.AddNewActivity
+import com.example.logintest.events.SwipeToDeleteCallback
 import com.example.logintest.ui.ViewModelFactory
+import com.example.logintest.ui.order.adapter.OrderAdapter
+import com.example.logintest.ui.order.addNew.AddNewActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.activity_listorder.*

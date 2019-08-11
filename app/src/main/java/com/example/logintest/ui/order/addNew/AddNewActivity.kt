@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Order.addNew
+package com.example.logintest.ui.order.addNew
 
 import android.app.DatePickerDialog
 import android.content.pm.PackageManager

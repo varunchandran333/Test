@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Order.addNew
+package com.example.logintest.ui.order.addNew
 
 import android.Manifest.permission
 import android.app.Application
@@ -10,12 +10,12 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.logintest.BaseApplication
 import com.example.logintest.constants.AppConstants.Companion.MY_PERMISSIONS_REQUEST_LOCATION
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.data.repository.OrderRepository
 import com.example.logintest.data.repository.ReverseGeoCodingRepo
 import com.example.logintest.database.OrderDatabase
+import com.example.logintest.myApp.BaseApplication
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices

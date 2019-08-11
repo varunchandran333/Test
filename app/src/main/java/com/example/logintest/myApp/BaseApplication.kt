@@ -1,4 +1,4 @@
-package com.example.logintest
+package com.example.logintest.myApp
 
 import android.app.Application
 import android.content.Context

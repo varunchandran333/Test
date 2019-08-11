@@ -1,4 +1,4 @@
-package com.example.logintest;
+package com.example.logintest.events;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,7 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.logintest.ui.Order.Adapter.OrderAdapter;
+import com.example.logintest.R;
+import com.example.logintest.ui.order.adapter.OrderAdapter;
 import org.jetbrains.annotations.NotNull;
 
 public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {

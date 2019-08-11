@@ -1,4 +1,4 @@
-package com.example.logintest.ui.Order
+package com.example.logintest.ui.order
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
