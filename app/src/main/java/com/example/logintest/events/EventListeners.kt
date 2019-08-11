@@ -9,6 +9,7 @@ interface EventListeners{
     }
     interface LogoutEvents {
         fun onLogout()
+        fun showOrders()
     }
     interface OrderEvents {
         fun onPurchaseDate()

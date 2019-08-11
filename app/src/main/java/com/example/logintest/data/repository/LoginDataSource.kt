@@ -1,8 +1,6 @@
 package com.example.logintest.data.repository
 
 import com.example.logintest.data.model.LoggedInUser
-import com.example.logintest.data.model.UserDetails
-import java.lang.Exception
 import java.util.*
 
 /**
@@ -17,7 +15,7 @@ class LoginDataSource {
                 userId = UUID.randomUUID().toString(),
                 displayName = "Sachin Tendulkar", status = true
             )
-        } catch (e:Exception){
+        } catch (e: Exception) {
             LoggedInUser(
                 userId = "0",
                 displayName = "", status = false

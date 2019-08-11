@@ -1,20 +1,19 @@
 package com.example.logintest.ui.Login
 
 import android.app.Activity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
-import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import androidx.annotation.StringRes
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.logintest.R
 import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.constants.AppConstants.Companion.SAVED_PASSWORD
@@ -24,8 +23,8 @@ import com.example.logintest.data.model.UserDetails
 import com.example.logintest.databinding.ActivityMainBinding
 import com.example.logintest.events.EventListeners
 import com.example.logintest.ui.Order.LoginSuccess
-import com.example.logintest.ui.Order.OrderActivity
 import com.example.logintest.ui.ViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -114,8 +113,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateUiWithUser(model: LoggedInUser) {
-        val i = Intent(this, OrderActivity::class.java)
-        //i.putExtra(PASSED_DATA, model)
+        val i = Intent(this, LoginSuccess::class.java)
+        i.putExtra(PASSED_DATA, model)
         startActivity(i)
         finish()
     }

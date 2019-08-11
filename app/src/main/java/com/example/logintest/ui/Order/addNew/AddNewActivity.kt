@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.example.logintest.R
-import com.example.logintest.constants.AppConstants.Companion.ID
 import com.example.logintest.constants.AppConstants.Companion.MY_PERMISSIONS_REQUEST_LOCATION
+import com.example.logintest.constants.AppConstants.Companion.ORDER_ID
 import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.databinding.AddNewOrderLayoutBinding
@@ -36,7 +36,7 @@ class AddNewActivity : AppCompatActivity() {
             R.layout.add_new_order_layout
         )
         order = intent.getParcelableExtra(PASSED_DATA)
-        idtoUpdate = intent.getStringExtra(ID)
+        idtoUpdate = intent.getStringExtra(ORDER_ID)
         db = FirebaseFirestore.getInstance()
         if (order != null)
             lBinder.order = order

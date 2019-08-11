@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class LoggedInUser(
-        val userId: String,
-        val displayName: String,
-        val status:Boolean
-): Parcelable
+    val userId: String,
+    val displayName: String,
+    val status: Boolean
+) : Parcelable

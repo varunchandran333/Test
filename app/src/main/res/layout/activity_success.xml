@@ -36,14 +36,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
         <Button
+                android:id="@+id/buttonShowOrder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Show Orders"
+                android:background="@color/color_button"
+                android:textColor="@color/color_white"
+                android:onClick="@{()->eventListener.showOrders()}"
+                app:layout_constraintTop_toBottomOf="@+id/displayName"
+                app:layout_constraintStart_toEndOf="@+id/login"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <Button
                 android:id="@+id/login"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/action_sign_out"
+                android:background="@color/color_button"
+                android:textColor="@color/color_white"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:onClick="@{()->eventListener.onLogout()}"
                 app:layout_constraintTop_toBottomOf="@+id/displayName"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintHorizontal_bias="0.5"
+
+                app:layout_constraintEnd_toStartOf="@+id/buttonShowOrder"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -6,14 +6,11 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.logintest.ui.Order.Adapter.OrderAdapter;
-
 import org.jetbrains.annotations.NotNull;
 
 public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
@@ -25,7 +22,7 @@ public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
         mAdapter = adapter;
         icon = ContextCompat.getDrawable(context,
                 R.drawable.ic_delete_black_24dp);
-        background = new ColorDrawable(Color.RED);
+        background = new ColorDrawable(Color.LTGRAY);
     }
     @Override
     public void onChildDraw(@NotNull Canvas c, @NotNull RecyclerView recyclerView, @NotNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {

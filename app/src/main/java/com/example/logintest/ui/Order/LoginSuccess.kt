@@ -1,16 +1,16 @@
 package com.example.logintest.ui.Order
 
 import android.content.Intent
-import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.logintest.R
 import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.data.model.LoggedInUser
 import com.example.logintest.databinding.ActivitySuccessBinding
 import com.example.logintest.events.EventListeners
 import com.example.logintest.ui.Login.LoginActivity
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_success.*
 
 
@@ -24,6 +24,11 @@ class LoginSuccess : AppCompatActivity() {
         val model: LoggedInUser = intent.getParcelableExtra(PASSED_DATA)
         binding.user = model
         binding.eventListener = object : EventListeners.LogoutEvents {
+            override fun showOrders() {
+                val i = Intent(applicationContext, OrderActivity::class.java)
+                startActivity(i)
+            }
+
             override fun onLogout() {
                 //Declared activity as singleTask in manifest
                 val i = Intent(applicationContext, LoginActivity::class.java)

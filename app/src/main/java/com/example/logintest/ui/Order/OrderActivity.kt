@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logintest.R
 import com.example.logintest.SwipeToDeleteCallback
-import com.example.logintest.constants.AppConstants.Companion.ID
+import com.example.logintest.constants.AppConstants.Companion.ORDER_ID
 import com.example.logintest.constants.AppConstants.Companion.PASSED_DATA
 import com.example.logintest.data.model.order.Orders
 import com.example.logintest.events.EventListeners
@@ -41,7 +41,7 @@ class OrderActivity : AppCompatActivity(), EventListeners.AdapterEvents {
 
     override fun onLongClick(order: Orders, id: String) {
         val intent = Intent(this, AddNewActivity::class.java)
-        intent.putExtra(ID, id)
+        intent.putExtra(ORDER_ID, id)
         intent.putExtra(PASSED_DATA, order)
         startActivity(intent)
         //replaceFragment(AddNewOrder.newInstance(order), R.id.container)
